@@ -170,7 +170,7 @@ class MetaTagBehavior extends Behavior
                     $data->content = isset($this->metaTags[$tag->id . $language]['content'])
                         ? $this->metaTags[$tag->id . $language]['content']
                         : $tag->default_value;
-                    $data->language = $language;
+                    $data->language_id = $language;
                     $data->populateRelation('metaTag', $tag);
 
                     $metaTags[$tag->id . $language] = $data;
