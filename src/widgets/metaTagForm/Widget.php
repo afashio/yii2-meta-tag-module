@@ -31,11 +31,20 @@ class Widget extends \yii\base\Widget
         }
 
         if($this->language){
-            $behavior->languages = [$this->language];
-        }
+            $languageList = $this->language;
+        } else {
             $languageList = $behavior->languages;
+        }
 
-        return $this->render('default', [
+        switch ($languageList){
+            case !is_array($languageList):
+                $view = 'single';
+                break;
+            default:
+                $view = 'default';
+        }
+
+        return $this->render($view, [
             'model' => $this->model,
             'languageList' => $languageList,
         ]);
