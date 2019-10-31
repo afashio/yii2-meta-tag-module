@@ -31,7 +31,7 @@ class Widget extends \yii\base\Widget
         }
 
         if($this->language){
-            $languageList[] = $this->language;
+            $behavior->languages = [$this->language];
         } else {
             $languageList = $behavior->languages;
         }
