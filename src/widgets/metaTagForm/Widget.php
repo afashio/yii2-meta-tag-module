@@ -15,6 +15,7 @@ class Widget extends \yii\base\Widget
      * @var \yii\db\ActiveRecord
      */
     public $model;
+    public $language;
 
     /**
      * @return null|string
@@ -29,7 +30,11 @@ class Widget extends \yii\base\Widget
             return null;
         }
 
-        $languageList = $behavior->languages;
+        if($this->language){
+            $languageList[] = $this->language;
+        } else {
+            $languageList = $behavior->languages;
+        }
 
         return $this->render('default', [
             'model' => $this->model,
