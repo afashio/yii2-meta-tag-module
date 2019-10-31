@@ -17,13 +17,13 @@ foreach ($model->metaTags as $i => $data) {
         switch ($data->metaTag->name) {
             case \notgosu\yii2\modules\metaTag\models\MetaTag::META_ROBOTS:
                 echo Html::activeCheckbox($model, 'metaTags[' . $i . '][content]',
-                    ['class' => 'form-control', 'label' => 'robots no index, FOLLOW' . ' [' . $data->language . ']']);
+                    ['class' => 'form-control', 'label' => 'robots no index, FOLLOW']);
                 break;
             case \notgosu\yii2\modules\metaTag\models\MetaTag::META_SEO_TEXT:
                 echo Html::activeLabel(
                     $model,
                     'metaTags[' . $i . '][content]',
-                    ['class' => 'control-label', 'label' => $data->metaTag->name . ' [' . $data->language . ']']
+                    ['class' => 'control-label', 'label' => $data->metaTag->name]
                 );
 
                 echo Html::activeTextarea($model, 'metaTags[' . $i . '][content]', ['class' => 'form-control']);
@@ -32,13 +32,13 @@ foreach ($model->metaTags as $i => $data) {
                 echo Html::activeLabel(
                     $model,
                     'metaTags[' . $i . '][content]',
-                    ['class' => 'control-label', 'label' => $data->metaTag->name . ' [' . $data->language . ']']
+                    ['class' => 'control-label', 'label' => $data->metaTag->name]
                 );
 
                 echo Html::activeTextInput($model, 'metaTags[' . $i . '][content]', ['class' => 'form-control']);
                 break;
         }
-        echo Html::tag('div', $data->metaTag->description . ' [' . $data->language . ']', ['class' => 'hint-block']);
+        echo Html::tag('div', $data->metaTag->description, ['class' => 'hint-block']);
 
         echo Html::endTag('div');
     }
