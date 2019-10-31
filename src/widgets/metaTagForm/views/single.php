@@ -11,7 +11,7 @@ use notgosu\yii2\modules\metaTag\models\MetaTagContent;
 use yii\helpers\Html;
 
 foreach ($model->metaTags as $i => $data) {
-    if($data->language == $languageList){
+    if($data->language_id == $languageList){
         echo Html::beginTag('div', ['class' => 'form-group']);
 
         switch ($data->metaTag->name) {
